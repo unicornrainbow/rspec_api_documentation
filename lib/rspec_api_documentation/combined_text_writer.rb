@@ -4,7 +4,7 @@ module RspecApiDocumentation
       index.examples.each do |rspec_example|
         example = CombinedTextExample.new(rspec_example)
         FileUtils.mkdir_p(configuration.docs_dir.join(example.resource_name))
-        File.open(configuration.docs_dir.join(example.resource_name, "index.txt"), "a+") do |f|
+        File.open(configuration.docs_dir.join(example.resource_name, "index.txt"), "ab+") do |f|
           f.print example.description
           f.print example.parameters
 
